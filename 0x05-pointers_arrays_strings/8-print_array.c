@@ -1,23 +1,29 @@
 #include "main.h"
-#include <stdio.h>
+#include "stdio.h"
 
 /**
- * print_array - prints n elements in the array a
- * @a: array to print
- * @n: number of elements to print
- *
- * Return: void
+ * print_array - print reverse characters.
+ * @a: Array
+ * @n: Number of array
+ * Return: Always 0.
  */
 void print_array(int *a, int n)
 {
-	int i = 0;
+	int i;
 
-	while (i < n)
+	if (n > 0)
 	{
-		printf("%d", a[i]);
-		if (i < (n - 1))
-			printf(", ");
-		i++;
+		for (i = 0 ; n > i; i++)
+		{
+			if (i != n - 1)
+			{
+				printf("%d, ", a[i]);
+			}
+			else
+			{
+			       printf("%d", a[i]);
+			}
+		}
 	}
 	printf("\n");
 }
