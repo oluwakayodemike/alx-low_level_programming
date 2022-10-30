@@ -2,8 +2,8 @@
 
 /**
  * infinite_add - adds two numbers
- * @n1: first number iii
- * @n2: second number iii
+ * @n1: first number
+ * @n2: second number
  * @r: result i
  * @size_r: size
  *
