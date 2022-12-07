@@ -1,8 +1,10 @@
-#include <elf.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <fcntl.h>
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+#include <elf.h>
 
 /**
  * get_magic - print magic numbers from ELF header if they exist, or exit
