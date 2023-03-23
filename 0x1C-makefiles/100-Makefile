@@ -1,37 +1,19 @@
-# compiler
 CC = gcc
-
-# flags
-CFLAGS = -Wall -Werror -Wextra -pedantic
-
-# files
-SRC = main.c file1.c file2.c
+SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
+CFLAGS = -Wall -Werror -Wextra -pedantic
+.PHONY : all clean oclean fclean re
 
-# commands
-RM = rm -f
-MKDIR = mkdir -p
-
-# rules
-all: $(NAME)
-
-$(NAME): $(OBJ)
+all : m.h $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-clean:
+clean :
+	$(RM) *~ $(NAME)
+
+oclean :
 	$(RM) $(OBJ)
-	$(RM) $(NAME)
 
-oclean:
-	$(RM) $(OBJ)
+fclean : clean oclean
 
-fclean: clean oclean
-
-re: fclean all
-
-$(OBJ): %.o: %.c m.h
-	$(CC) $(CFLAGS) -c $< -o $@
-
-.PHONY: all clean oclean fclean re
-
+re : oclean all
